@@ -10,6 +10,7 @@ import javax.persistence.Query;
 
 import ec.edu.ups.pweb.CLIENTE.MODEL.Cliente;
 
+
 @Stateless
 public class ClienteDAO {
 
@@ -32,6 +33,16 @@ public class ClienteDAO {
 	public void delete( String cedula) {
 		Cliente op = em.find(Cliente.class, cedula);
 		em.remove(op);
+	}
+	
+	public List<Cliente>getList(){
+		List<Cliente> listado=new ArrayList<Cliente>();
+	
+		String jpql="SELECT op FROM Cliente op"; 
+		
+		Query query =em.createQuery(jpql,Cliente.class);
+		listado=query.getResultList();
+	return listado;
 	}
 
 }
