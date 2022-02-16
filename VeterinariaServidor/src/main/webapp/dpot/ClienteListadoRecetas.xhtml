@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="PlantillaListado.xhtml">
+	<ui:define name="title">
+        Listado de Mascotas
+    </ui:define>
+	<ui:define name="content">
+	
+		<h:head>
+
+			<input class="btn btn-light" type="button" value="Inicio"
+				onclick="location='VentanaCliente.xhtml'" />
+		</h:head>
+		  
+		<h:form>
+		
+			<p:outputLabel value="Filtrar por Nombre de Mascota: ">
+				<p:inputText value="#{recetaBean.nombre}"/>
+					<p:commandButton value="Filtrar" action="#{recetaBean.RetasFiltrar()}">
+						<f:ajax render="tabla"/>
+				</p:commandButton>
+			</p:outputLabel>
+		<br/>
+		
+			<p:dataTable id="tabla" var="listReceta" value="#{recetaBean.rece}"
+						 paginator="true" paginatorPosition="bottom" emptyMessage="Sin Datos">
+						 
+			
+				<p:column headerText="Codigo" >
+					<p:outputLabel value="#{listReceta.codigo}"/>
+					
+				</p:column>
+					
+				<p:column headerText="Cedula" >
+					<p:outputLabel value="#{listReceta.cedula}"/>
+			
+				</p:column>
+
+				<p:column headerText="Nombre Dueño" >
+					<p:outputLabel value="#{listReceta.nombreDuenio}"/>
+					
+				</p:column>
+
+				<p:column headerText="Nombre Mascota" >
+					<p:outputLabel value="#{listReceta.nombreMascota}"/>
+					
+				</p:column>
+
+				<p:column headerText="Fecha" >
+					<p:outputLabel value="#{listReceta.fecha}"/>
+					
+				</p:column>
+				
+				<p:column headerText="Raza" >
+					<p:outputLabel value="#{listReceta.raza}"/>
+					
+				</p:column>
+				<p:column headerText="Descripcion" >
+					<p:outputLabel value="#{listReceta.descripcion}"/>
+					
+				</p:column>
+				
+
+			</p:dataTable>
+		
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

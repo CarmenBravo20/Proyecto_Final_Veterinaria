@@ -15,6 +15,6 @@ public interface MascotaONLocal {
 	public Mascota read(String codigo) ;
 	
 	public void delete( int codigo) ;
-	public List<Mascota>getList();
+	public List<Mascota>getMascotas();
 	
 }

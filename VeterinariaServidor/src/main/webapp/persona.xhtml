@@ -19,19 +19,33 @@
                       <h:inputText class="form-control" id="exampleInputUsername1" value="#{clientesBean.cliente.cedula}" placeholder="Username" />
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Nombre</label>
-                      <h:inputText  class="form-control" id="exampleInputEmail1" value="#{clientesBean.cliente.nombre}"  placeholder="Email"/>
+                      <label for="Nombre">Nombre</label>
+                      <h:inputText  class="form-control" id="Nombre" value="#{clientesBean.cliente.nombre}"  placeholder="Email"/>
                     </div>
+                     <div class="form-group">
+                      <label for="exampleInputEmail1">Apellido</label>
+                      <h:inputText  class="form-control" id="exampleInputEmail1" value="#{clientesBean.cliente.apellido}"  placeholder="Email"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <h:inputText  class="form-control" id="email" value="#{clientesBean.cliente.apellido}"  placeholder="Email"/>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <h:inputText  class="form-control" id="password" value="#{clientesBean.cliente.nombre}"  placeholder="Email"/>
+                    </div>
+                  
                     <div class="form-group">
                       <label for="exampleInputPassword1">Dirección</label>
                       <h:inputText class="form-control" id="exampleInputPassword1" value="#{clientesBean.cliente.direccion}"  placeholder="Password"/>
                     </div>
-                    <div class="form-group">
-                      <label for="telefono">Teléfono</label>
-                      <h:inputText class="form-control" id="telefono" value="#{clientesBean.cliente.telefono}"  placeholder="Password"/>
-                    </div>
              
-                    
+             	 	<div class="form-group">
+                      <label for="exampleInputPassword1">Télefono</label>
+                      <h:inputText class="form-control" id="exampleInputPassword1" value="#{clientesBean.cliente.telefono}"  placeholder="Password"/>
+                    </div>
+                               
                     <h:commandButton action="#{clientesBean.Guardar()}" value="Guardar"  class="btn btn-primary mr-2"/>
                  
                   </h:form>

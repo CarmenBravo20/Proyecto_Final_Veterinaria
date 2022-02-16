@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+      
+
+
+
+<h:head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Underdog;display=swap" rel="stylesheet"/>
+
+	<!-- nuestros estilos-->
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+
+	<!-- iconos de friconix-->
+	<script defer="defer" src="https://friconix.com/cdn/friconix.js"></script>
+
+	<title>El Dogtor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700;display=swap" rel="stylesheet"/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	
+	<link rel="stylesheet" href="css/style.css"/>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	
+	<link rel="stylesheet" href="css/style.css"/>
+
+	</h:head>
+	<h:body>
+
+
+	<!-- INICIO SECCIÓN INFORMES -->
+	<div class="container-fluid bg-color-info font-color-general" id="inicio">
+		<div class="row">
+			<div class="col-12 col-lg-6 text-center text-lg-left my-3 pl-5">
+				Veterinaria de Cuenca
+			</div>
+
+			<div class="col-12 col-lg-6 text-center text-lg-right my-3 pr-5">
+				Lunes a Viernes de 9 am a 7 pm. <span class="font-weigth-bolder"><i class="fi-xnsuxl-smartphone-solid"></i> 5541554263</span> 
+			</div>
+		</div>
+	</div>
+
+	<!-- FIN SECCIÓN INFORMES -->
+
+	<!-- INICIO NAVBAR -->
+	<nav class="navbar navbar-expand-lg sticky-top bg-light">
+		<span class="brand-name">El Dogtor</span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="font-color-general"><i class="fi-xwsrxl-ellipsis"></i></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link font-color-general mr-lg-3 ml-3" href="#inicio">Inicio</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link font-color-general mr-3 ml-3" href="#nosotros">Nosotros</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link font-color-general mr-3 ml-3" href="../../login/Login.xhtml">Autenticación</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link font-color-general mr-3 ml-3" href="#servicios">Servicios</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link font-color-general mr-3 ml-3" href="#contacto">Contacto</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Listado Clientes</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4"></h4>
+					<div class="table-wrap">
+						<ui:insert name="content">
+							<span></span>
+						</ui:insert>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+<!-- FIN SECCIÓN CONTACTO -->
+	<section class="container-fluid bg-color-azul p-5" id="contacto">
+		<h4 class="text-center p-3 text-white">
+			Contacto
+		</h4>
+
+		<hr class="hrblanco"/>
+
+		<div class="row">
+			<div class="col-12 col-lg-3 my-5">
+				<h4 class="text-center text-white"><i class="fi-onluxl-bus-side"></i> Dirección</h4>
+				<div class="text-white text-center my-3">
+					<p>Av. Col. del Valle 732</p>
+					<p class="mt-n3">Col. del Valle, CDMX</p>	
+				</div>
+			</div>
+
+
+
+			<div class="col-12 col-lg-3 my-5">
+				<h4 class="text-center text-white"><i class="fi-xnsuxl-smartphone-solid"></i> Teléfono</h4>
+				<div class="text-white text-center my-3">
+					<p>Tienda: 55 1234 5678</p>
+					<p class="mt-n3">WhatsApp: 55 1234 5567</p>	
+				</div>
+			</div>
+
+			<div class="col-12 col-lg-3 my-5">
+				<h4 class="text-center text-white"><i class="fi-xnluxl-envelope"></i> Correo</h4>
+				<div class="text-white text-center my-3">
+					<p>contacto@eldoctor.com</p>
+					<p class="mt-n3">ventas@eldogtor.com</p>	
+				</div>
+			</div>
+
+			<div class="col-12 col-lg-3 my-5">
+				<h4 class="text-center text-white"><i class="fi-xtluxl-calendar-thin"></i> Horario</h4>
+				<div class="text-white text-center my-3">
+					<p>Lunes a Viernes de 7am a 9 pm</p>
+					<p class="mt-n3">Sábado de 7am a 1 pm</p>	
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- FIN SECCIÓN CONTACTO-->
+
+	<!-- INICIO SECCIÓN MAPA -->
+	<section class="container-fluid">
+		<a href="https://www.google.com/maps" target="_blank"><img src="img/mapa.jpg" class="img-fluid" alt="imagen mapa"/></a>
+	</section>
+
+	<!-- FIN SECCIÓN MAPA -->
+
+	<!-- INICIO SECCIÓN FOOTER-->
+	<footer class="container-fluid bg-color-info p-3 font-color-general text-center">
+		<p class="m-3">
+			El Dogtor © 2020 - Todos los derechos reservados
+		</p>
+	</footer>
+
+	<!-- FIN SECCIÓN FOOTER-->
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</h:body>
+</html>

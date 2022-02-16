@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+ 
+<ui:composition template="PlantillaRegistro.xhtml">
+    <ui:define name="title ">
+        Login
+    </ui:define>
+   <ui:define name="content">
+   <div class="card-body">
+                 
+                  <p class="card-description">
+                    
+                  </p>
+                  <h2> Login</h2>
+                  <h:form class="forms-sample">
+                   
+                    <div class="form-group">
+                      <label for="txtemail">Email</label>
+                      <h:inputText  class="form-control" id="txtemail" value="#{loginBean.veterinario.email}"  placeholder="Email"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="txtpass">Contraseña</label>
+                      <h:inputSecret class="form-control" id="txtpass" value="#{loginBean.veterinario.password}"  placeholder="Password"/>
+                    </div>
+             
+ 					<h:commandButton action="#{loginBean.ValidarLoginVet()}" value="Ingresar"  class="btn btn-primary mr-2" />
+     
+                  </h:form>
+                </div>
+       
+    </ui:define>
+ 
+</ui:composition>
+</html>

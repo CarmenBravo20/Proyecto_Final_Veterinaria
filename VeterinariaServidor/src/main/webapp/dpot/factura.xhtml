@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="bootstrap-invoice.xhtml">
+	<ui:define name="title">
+        Crear Clientes
+    </ui:define>
+	<ui:define name="content">
+		<div class="card-body">
+
+
+		<h:form class="forms-sample">
+			
+				<div class="form-group">
+						<label for="fecha">Fecha</label>
+						<p:inputText class="form-control" id="txtFecha" value="#{facturaBean.fac.fecha}" placeholder="Password" />
+					</div>	
+	
+					<div class="form-group">
+						<label for="txtCedula">Cédula</label> 
+						<p:inputText class="form-control" id="txtCedula" value="#{facturaBean.fac.cedula}" placeholder="Username"/>
+					</div>	
+							
+					<div class="form-group">
+						<label for="Nombre">Nombre</label>
+						<p:inputText class="form-control" id="Nombre" value="#{facturaBean.fac.nombre}" placeholder="Email" />
+					</div>
+			
+	
+					<div class="form-group">
+						<label for="Direccion">Dirección</label>
+						<p:inputText class="form-control" id="Direccion" value="#{facturaBean.fac.direccion}" placeholder="Password" />
+					</div>
+			
+					<div class="form-group">
+						<label for="Telefono">Télefono</label>
+						<p:inputText class="form-control" id="Telefono" value="#{facturaBean.fac.telefono}" placeholder="Password" />
+					</div>
+</h:form>
+<h:form class="forms-sample">				
+<p:panel id="panelDatosFactura">	
+
+		<div class="form-group">
+		
+			<font size="3" color="orange">Cantidad</font>
+				<p:inputText value="#{facturaBean.facdet.cantidad}" class="form-control"/>
+				
+			<font size="3" color="orange">Descripcion</font>
+				<p:inputText value="#{facturaBean.facdet.descripcion}" class="form-control"/>
+				
+			<font size="3" color="orange">P.Unit</font>
+				<p:inputText value="#{facturaBean.facdet.precio}" class="form-control">
+				</p:inputText>
+		</div>
+
+		
+			  <center>	
+				<p:commandButton action="#{facturaBean.Agregar()}" value="Agregar" class="btn btn-primary mr-2" />
+			</center>	
+			
+</p:panel>		
+
+			<p:dataTable var="det" class="table table-hover" value="#{facturaBean.lista}" id="tbl">
+			
+				<p:column headerText="Descripcion">
+					
+					<h:outputText value="#{det.descripcion}" />
+				</p:column>
+	
+				<p:column headerText="Cantidad">
+					
+					<h:outputText value="#{det.cantidad}" />
+				</p:column>
+				
+				<p:column headerText="P.Unit">
+					
+					<h:outputText value="#{det.precio}" />
+				</p:column>
+				<p:column headerText="Total">
+					
+					<h:outputText value="#{det.cantidad * det.precio}" />
+				</p:column>
+				
+				<p:column headerText="Accion">
+				<!--  <h:commandButton   value="Eliminar" class="btn btn-danger mr-2" />	-->	
+				</p:column>
+				
+			</p:dataTable>
+			<!--	<h:commandButton   value="Guardar" class="btn btn-warning mr-2" /> -->	
+	</h:form>
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>
+</html>

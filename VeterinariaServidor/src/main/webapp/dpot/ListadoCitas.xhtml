@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:composition template="PlantillaListado.xhtml">
+	<ui:define name="title">
+        Listado de Clientes
+    </ui:define>
+	<ui:define name="content">
+		<h:form>
+		<p:outputLabel value="Filtrar por Nombre de Mascota: ">
+			<p:inputText value="#{citasBean.nombre}"/>
+			<p:commandButton value="Filtrar" action="#{citasBean.CitasFiltrar()}">
+				<f:ajax render="tblCitas"/>
+			</p:commandButton>
+		</p:outputLabel>
+
+			<br />
+			<div>
+			<input class="btn btn-light" type="button" value="Crear Cita" onclick="location='RegistrarCita.xhtml'" />
+			</div>
+			<h:dataTable id="tblCitas" var="cita" class="table table-hover" value="#{citasBean.citas}">
+				
+				<h:column>
+					<f:facet name="header">Código</f:facet>
+					#{cita.codigo}
+			</h:column>
+				<h:column>
+					<f:facet name="header">Cedula Cliente</f:facet>
+					#{cita.cedula}
+			</h:column>
+
+				<h:column>
+					<f:facet name="header">Nombre Mascota</f:facet>
+					#{cita.nombre}
+			</h:column>
+
+				<h:column>
+					<f:facet name="header">Hora Cita</f:facet>
+				#{cita.hora}
+			
+			</h:column>
+
+				<h:column>
+					<f:facet name="header">Fecha</f:facet>
+				#{cita.fecha}
+			
+			</h:column>
+				<h:column>
+					<f:facet name="header">Descripción</f:facet>
+				#{cita.descripcion}
+			
+			</h:column>
+				<h:column>
+					<f:facet name="header">Estado</f:facet>
+				#{cita.estado}
+			
+			</h:column>
+			
+			</h:dataTable>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

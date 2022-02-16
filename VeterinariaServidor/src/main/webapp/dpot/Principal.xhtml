@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="PlantillaRegistro.xhtml">
+	<ui:define name="title">
+       Inicio
+    </ui:define>
+	<ui:define name="content">
+		<div class="card-body">
+
+			<p class="card-description"></p>
+
+
+			<h:form>
+				<label>VETERINARIO</label>
+				<h:commandButton image ="/dpot/images/veterinario.png" action="LoginVeterinario.xhtml" value="Veterinario" class="btn btn-primary mr-2" />
+				<br />
+				<br />
+				<label>CLIENTE</label>
+				<h:commandButton image ="/dpot/images/cliente.png"  action="LoginCliente.xhtml" value="Cliente" class="btn btn-primary mr-2" />
+			</h:form>
+		</div>
+
+	</ui:define>
+
+</ui:composition>
+</html>

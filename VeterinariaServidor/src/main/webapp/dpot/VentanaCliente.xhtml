@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  <h:head>
+ <f:metadata>
+ 	<f:viewParam name="id" value="#{clientesBean.cedula}"></f:viewParam>
+	<f:viewAction action="#{clientesBean.loadData()}"/>
+ </f:metadata>
+ 
+</h:head>
+<ui:composition template="PlantillaRegistro.xhtml">
+    <ui:define name="title">
+        Registro Mascotas
+    </ui:define>
+	<ui:define name="content">
+		<div class="card-body">
+
+
+			<h:form class="forms-sample">
+			
+			
+				<div class="form-group">
+					<label for="cedula">Buscar Recetas </label>
+					<label>por Cedula:</label>
+					<h:inputText  class="form-control" id="cedula" value="#{clienteRecetaBean.receta.cedula}" />
+					
+					 <h:commandButton action="#{clienteRecetaBean.BuscarReceta(clienteRecetaBean.receta.cedula)}" value="Buscar" class="btn btn-primary mr-2" />
+				</div>
+				
+			
+								
+					<center>
+						-------------------------------------------- 
+						<br/>
+						<FONT SIZE="4" COLOR="red">CAMBIAR CUENTA </FONT> <br/>
+						<input class="btn btn-light" type="button" value="Cambiar Cuenta" onclick="location='LoginCliente.xhtml'" />
+					</center>
+			
+				<br/>
+			
+					<center>
+						-------------------------------------------- 
+						<br/>
+						<FONT SIZE="4" COLOR="green">REGISTRAR CITA </FONT> <br/>
+						<input class="btn btn-light" type="button" value="Crear Cita" onclick="location='RegistrarCita.xhtml'" />
+					</center> 
+				<br/>
+				
+			</h:form>
+
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

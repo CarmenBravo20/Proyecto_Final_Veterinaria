@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  <h:head>
+ <f:metadata>
+ 	<f:viewParam name="id" value="#{clientesBean.cedula}"></f:viewParam>
+	<f:viewAction action="#{clientesBean.loadData()}"/>
+ </f:metadata>
+ 
+</h:head>
+<ui:composition template="PlantillaRegistro.xhtml">
+    <ui:define name="title">
+        Registro Mascotas
+    </ui:define>
+   <ui:define name="content">
+   <div class="card-body">
+                 
+               
+                  <h:form class="forms-sample">
+
+					<center>						
+						<FONT SIZE="4" COLOR="orange">REGISTRAR MASCOTA </FONT> <br/>
+						<input class="btn btn-primary" type="button" value="Crear Mascota" onclick="location='RegistroMascotas.xhtml'" />	
+					</center> 
+
+                   	-------------------------------------------------------
+					<center>						
+						<FONT SIZE="4" COLOR="orange">REGISTRAR RECETA </FONT> 
+						<br/>
+						<input class="btn btn-primary" type="button" value="Crear Receta" onclick="location='RegistrarReceta.xhtml'" />	
+						
+					</center> 
+					-------------------------------------------------------
+                    
+					<center>						
+						<FONT SIZE="4" COLOR="orange">GENERAR FACTURA </FONT> 
+						<br/>
+						<input class="btn btn-primary" type="button" value="Crear Factura" onclick="location='factura.xhtml'" />	
+						
+					</center> 
+					-------------------------------------------------------
+                    
+					<center>						
+						
+					
+						<input class="btn btn-warning" type="button" value="Listado Clientes" onclick="location='ListadoPersonas.xhtml'" />	
+						
+					</center> 
+              
+                 
+                  </h:form>
+                  
+             </div>
+             
+       
+    </ui:define>
+ 
+</ui:composition>
+</html>

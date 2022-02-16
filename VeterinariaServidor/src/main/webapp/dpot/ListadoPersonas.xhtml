@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+ 
+<ui:composition template="PlantillaListado.xhtml">
+    <ui:define name="title">
+        Listado de Clientes
+    </ui:define>
+    <ui:define name="content">
+		<h:form>
+			
+			<input class="btn btn-warning" type="button" value="Volver" onclick="location='VentanaVeterinaria.xhtml'" />
+			<br/>	
+				<h:dataTable var="per" class="table table-hover"
+					value="#{clientesBean.clientes}">
+					<h:column>
+						<f:facet name="header">Cedula</f:facet>
+					#{per.cedula}
+			</h:column>
+
+					<h:column>
+						<f:facet name="header">Nombre</f:facet>
+					#{per.nombre}
+			</h:column>
+
+					<h:column>
+						<f:facet name="header">Apellido</f:facet>
+				#{per.apellido}
+			
+			</h:column>
+
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+				#{per.email}
+			
+			</h:column>
+					<h:column>
+						<f:facet name="header">Password</f:facet>
+				#{per.password}
+			
+			</h:column>
+
+					<h:column>
+						<f:facet name="header">Direccion</f:facet>
+				#{per.direccion}
+			
+			</h:column>
+
+					<h:column>
+						<f:facet name="header">Telefono</f:facet>
+				#{per.telefono}
+			
+			</h:column>
+
+					<h:column>
+						<h:commandButton image ="/dpot/images/Editar.png" action="#{clientesBean.editar(per.cedula)}"
+							value="Editar" inmediate="true" />
+					</h:column>
+					<h:column>
+						<h:commandButton image ="/dpot/images/Eliminar.png" action="#{clientesBean.delete(per.cedula)}"
+							value="Eliminar" inmediate="true" />
+					</h:column>
+				</h:dataTable>
+		</h:form>
+
+	</ui:define>
+ 
+</ui:composition>
+</html>

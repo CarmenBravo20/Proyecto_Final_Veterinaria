@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="PlantillaListado.xhtml">
+	<ui:define name="title">
+        Listado de Clientes
+    </ui:define>
+	<ui:define name="content">
+		<h:head>
+			<input class="btn btn-primary mr-2" type="button" value="Crear Receta"
+				onclick="location='RegistrarReceta.xhtml'" />
+			<input class="btn btn-primary mr-2" type="button" value="Inicio"
+				onclick="location='VentanaVeterinaria.xhtml'" />
+		</h:head>
+		  
+		<h:form>
+		
+			<!-- Para Reportes -->
+				<div align="right">
+					<h:commandLink>
+						<h:graphicImage url="../dogtor/images/PDF.png" />
+						<p:dataExporter type="pdf" target="tabla" fileName="ReporteMesualRecetas"/>
+					</h:commandLink>
+				</div>
+			<p:dataTable  id="tabla" var="receta" value="#{recetaBean.rece}"
+						 paginator="true" paginatorPosition="top" emptyMessage="Sin Datos"
+						 widgetVar="tablaFiltro" filteredValue="#{recetaBean.rece}">
+				
+					<p:column headerText="Fecha" >
+						<p:outputLabel value="#{receta.fecha}"/>
+					</p:column>
+					
+					<p:column headerText="Cedula" >
+						<p:outputLabel value="#{receta.cedula}"/>
+					</p:column>
+					
+					<p:column headerText="Nombre Dueño" >
+						<p:outputLabel value="#{receta.nombreDuenio}"/>
+					</p:column>
+					
+					<p:column headerText="Nombre Mascota" >
+						<p:outputLabel value="#{receta.nombreMascota}"/>
+					</p:column>
+					
+					<p:column headerText="Raza" >
+						<p:outputLabel value="#{receta.raza}"/>
+					</p:column>
+					
+					<p:column headerText="Diagnostico" >
+						<p:outputLabel value="#{receta.descripcion}"/>
+					</p:column>
+
+
+				<p:column>
+					<f:facet name="header">Acciones</f:facet>
+					<h:commandButton image ="/dpot/images/Editar.png" action="#{recetaBean.editar(receta.codigo)}"
+						value="Editar" inmediate="true" />
+
+					<h:commandButton image ="/dpot/images/Eliminar.png" action="#{recetaBean.delete(receta.codigo)}" value="Eliminar" inmediate="true" />
+				</p:column>
+
+			</p:dataTable>
+			
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +17,11 @@ public class Cliente implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L; 
 	
+	
 		@Id
+		@Column(name="cli_codigo")
+		private int codigo;
+		
 		@Column(name="cli_cedula")
 		private String cedula;
 		
@@ -27,6 +33,8 @@ public class Cliente implements Serializable{
 		
 		@Column(name="cli_telefono")
 		private String telefono;
+		
+
 
 		public String getCedula() {
 			return cedula;
@@ -59,8 +67,18 @@ public class Cliente implements Serializable{
 		public void setTelefono(String telefono) {
 			this.telefono = telefono;
 		}
-		
+		public int getCodigo() {
+			return codigo;
+		}
 
-		
+		public void setCodigo(int codigo) {
+			this.codigo = codigo;
+		}
+
+		@Override
+		public String toString() {
+			return "Cliente [cedula=" + cedula + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono="
+					+ telefono + "]";
+		}
 
 }

@@ -2,10 +2,13 @@ package ec.edu.ups.pweb.CLIENTE.MODEL;
 
 import java.io.Serializable;
 
-import javax.inject.Named;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @Entity
@@ -28,7 +31,11 @@ public class Mascota implements Serializable {
 	
 	@Column(name="masc_sexo")
 	private String sexo;
-
+	
+	@ManyToOne
+	@JoinColumn(name = "cli_codigo")
+	private Cliente cliente;
+	
 	public int getCodigo() {
 		return codigo;
 	}

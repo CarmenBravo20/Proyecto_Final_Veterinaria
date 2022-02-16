@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" 
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:p="http://primefaces.org/ui">
+  <h:head>
+ <f:metadata>
+ 	<f:viewParam name="id" value="#{recetaBean.codigo}"></f:viewParam>
+	<f:viewAction action="#{recetaBean.CargaDatos()}"/>
+ </f:metadata>
+ </h:head>
+<ui:composition template="PlantillaRegistro.xhtml">
+    <ui:define name="title">
+        Crear Recetas
+    </ui:define>
+   <ui:define name="content">
+		<div class="card-body">
+
+
+			<h:form class="forms-sample">
+				<div class="form-group">
+					<label for="codigo">Código</label>
+					<h:inputText class="form-control" id="codigo"
+						value="#{recetaBean.receta.codigo}" placeholder="Codigo" readonly="true">
+						<f:ajax excute="codigo"
+							render="fecha cedula nombreD nombreM raza descripcion"
+							listener="#{recetaBean.loadDataEditar()}" />
+					</h:inputText>
+				</div>
+
+
+				<div class="form-group">
+					<h:panelGrid columns="2" cellspacing="1">
+						<label for="fecha">Fecha</label>
+						<p:calendar value="#{recetaBean.receta.fecha}" />
+
+					</h:panelGrid>
+				</div>
+				<div class="form-group">
+					<label for="cedula">Cédula</label>
+					<h:inputText class="form-control" id="cedula"
+						value="#{recetaBean.receta.cedula}" placeholder="Cedula" />
+				</div>
+				<div class="form-group">
+					<label for="nombreD">Nombre del Dueño</label>
+					<h:inputText class="form-control" id="nombreD"
+						value="#{recetaBean.receta.nombreDuenio}" placeholder="nombreD" />
+				</div>
+
+				<div class="form-group">
+					<label for="nombreM">Nombre Mascota</label>
+					<h:inputText class="form-control" id="nombreM"
+						value="#{recetaBean.receta.nombreMascota}" placeholder="nombreM" />
+				</div>
+
+				<div class="form-group">
+					<label for="raza">Raza</label>
+					<h:inputText class="form-control" id="raza"
+						value="#{recetaBean.receta.raza}" placeholder="raza" />
+				</div>
+
+				<div class="form-group">
+					<label for="descripcion">Descripción</label>
+					<h:inputText class="form-control" id="descripcion"
+						value="#{recetaBean.receta.descripcion}" placeholder="descripcion" />
+				</div>
+
+				<h:commandButton action="#{recetaBean.Guardar()}" value="Guardar"
+					class="btn btn-primary mr-2" />
+
+				<input class="btn btn-warning" type="button" value="Volver"
+					onclick="location='VentanaVeterinaria.xhtml'" />
+			</h:form>
+		</div>
+
+	</ui:define>
+ 
+</ui:composition>
+</html>

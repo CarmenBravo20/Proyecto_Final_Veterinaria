@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+ <h:head>
+	<f:metadata>
+		<f:viewParam name="id" value="#{mascotaBean.codigo}"></f:viewParam>
+		<f:viewAction action="#{mascotaBean.CargaDatos()}" />
+	</f:metadata>
+
+</h:head> 
+<ui:composition template="PlantillaRegistro.xhtml">
+	<ui:define name="title">
+        Registro Mascotas
+    </ui:define>
+	<ui:define name="content">
+		<div class="card-body">
+
+
+			<h:form class="forms-sample">
+			
+			<div class="form-group">
+					<label for="Codigo">Codigo</label>
+					<h:inputText class="form-control" id="Codigo" value="#{mascotaBean.mascota.codigo}" readonly="true">
+					<f:ajax excute="Codigo" 
+							render="Cedula NombreM Raza Sexo tipo"
+							listener="#{mascotaBean.loadDataEditar()}" />
+					</h:inputText>
+
+				</div>
+					<center>
+					<input  class="btn btn-primary mr-2" type="button" value="Listar Mascotas" onclick="location='ListadoMascota.xhtml'" />	
+					
+					<input  class="btn btn-danger mr-2" type="button" value="Generar Reporte" onclick="location='ReporteMascotas.xhtml'" />	
+					</center>
+				<br>
+				------------------------------------------------------
+				<center>
+				<FONT SIZE="4" COLOR="green">REGISTRAR MASCOTA </FONT>
+				</center>
+				</br>
+				
+				<div class="form-group">
+					<label for="Cedula">Cédula</label>
+					<h:inputText class="form-control" id="Cedula" value="#{mascotaBean.mascota.cedula}" placeholder="Username"/>
+
+				</div>
+
+
+				<div class="form-group">
+
+					<label for="NombreM">Nombre de Mascota</label>
+					<h:inputText class="form-control" id="NombreM"
+						value="#{mascotaBean.mascota.nombre}" placeholder="Username" />
+				</div>
+				<div class="form-group">
+					<label for="Raza">Raza de Mascota</label>
+					<h:inputText class="form-control" id="Raza"
+						value="#{mascotaBean.mascota.raza}" placeholder="Email" />
+				</div>
+				
+				
+				<div class="form-group">
+				   
+					<label for="sexo">Sexo: </label>
+					
+					<h:selectOneMenu value="#{mascotaBean.mascota.sexo}" style="width:195px">
+					<f:selectItem itemValue="Macho" itemLabel="Macho"/>
+					<f:selectItem itemValue="Hembra" itemLabel="Hembra"/>
+					</h:selectOneMenu>
+			</div>
+			<div class="form-group" >	   
+					<label for="tipo">Tipo: </label>
+					
+					<h:selectOneMenu value="#{mascotaBean.mascota.tipo}" style="width:195px">
+					<f:selectItem itemValue="Otro" itemLabel="Otro"/>
+					<f:selectItem itemValue="Perro" itemLabel="Perro"/>
+					<f:selectItem itemValue="Gato" itemLabel="Gato"/>
+					</h:selectOneMenu>
+				</div>
+
+				<h:commandButton action="#{mascotaBean.guardar()}" value="Guardar" class="btn btn-primary mr-2" />
+				
+				<input class="btn btn-warning" type="button" value="Inicio" onclick="location='VentanaVeterinaria.xhtml'" />	
+
+			</h:form>
+
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

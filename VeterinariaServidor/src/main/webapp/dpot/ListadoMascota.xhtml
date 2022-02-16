@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="PlantillaListado.xhtml">
+	<ui:define name="title">
+        Listado de Mascotas
+    </ui:define>
+	<ui:define name="content">
+	<h:form>
+		<p:outputLabel value="Filtrar por Cedula: ">
+			<p:inputText value="#{mascotaBean.cedula}"/>
+			<p:commandButton value="Filtrar" action="#{mascotaBean.MascotasFiltrar()}">
+				<f:ajax render="tblMascotas"/>
+			</p:commandButton>
+		</p:outputLabel>
+		<br/>
+	
+		<h:head>
+			<input class="btn btn-primary mr-2" type="button" value="Crear Mascota"
+				onclick="location='RegistroMascotas.xhtml'" />
+			<input class="btn btn-warning mr-2" type="button" value="Inicio"
+				onclick="location='VentanaVeterinaria.xhtml'" />
+		</h:head>
+
+		
+			<p:dataTable id="tblMascotas" var="listMascota" class="table table-hover" value="#{mascotaBean.mascotas}">
+
+				<p:column>
+					<f:facet name="header">
+						<p:outputLabel value="Codigo"/>
+					</f:facet>		
+						<p:outputLabel value="#{listMascota.codigo}"/>	
+						
+						
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<p:outputLabel value="Cedula"/>
+					</f:facet>		
+						<p:outputLabel value="#{listMascota.cedula}"/>	
+				</p:column>
+					
+				<p:column>
+					<f:facet name="header">
+						<p:outputLabel value="Nombre"/>
+					</f:facet>		
+						<p:outputLabel value="#{listMascota.nombre}"/>	
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<p:outputLabel value="Raza"/>
+					</f:facet>		
+						<p:outputLabel value="#{listMascota.raza}"/>	
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<p:outputLabel value="Sexo"/>
+					</f:facet>		
+						<p:outputLabel value="#{listMascota.sexo}"/>	
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<p:outputLabel value="Tipo"/>
+					</f:facet>		
+						<p:outputLabel value="#{listMascota.tipo}"/>	
+				</p:column>
+				
+					<p:column>
+					<f:facet name="header">Acciones</f:facet>
+						<h:commandButton image ="/dpot/images/Editar.png"  action="#{mascotaBean.editar(listMascota.codigo)}"
+							value="Editar" inmediate="true" />
+						
+						<h:commandButton image ="/dpot/images/Eliminar.png"  action="#{mascotaBean.delete(listMascota.codigo)}"
+							value="Eliminar" inmediate="true" />
+					</p:column>
+
+			</p:dataTable>
+		
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

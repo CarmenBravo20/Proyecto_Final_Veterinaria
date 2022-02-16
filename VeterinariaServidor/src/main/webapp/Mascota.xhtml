@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+ 
+<ui:composition template="template/plantilla.xhtml">
+    <ui:define name="title">
+        Crear Mascota
+    </ui:define>
+   <ui:define name="content">
+   <div class="card-body">
+                 
+                  <p class="card-description">
+                   Mascota
+                  </p>
+                  <h:form class="forms-sample">
+                    <div class="form-group">
+                    
+                      <label for="exampleInputUsername1">Nombre</label>        
+                      <h:inputText class="form-control" id="exampleInputUsername1" value="#{mascotaBean.mascota.nombre}" placeholder="Username" />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Raza</label>
+                      <h:inputText  class="form-control" id="exampleInputEmail1" value="#{mascotaBean.mascota.raza}"  placeholder="Email"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Sexo</label>
+                      <h:inputText class="form-control" id="exampleInputPassword1" value="#{mascotaBean.mascota.sexo}"  placeholder="Password"/>
+                    </div>
+                    
+             
+                    
+                    <h:commandButton action="#{mascotaBean.Guardar()}" value="Guardar"  class="btn btn-primary mr-2"/>
+                 
+                  </h:form>
+                </div>
+       
+    </ui:define>
+ 
+</ui:composition>
+</html>
